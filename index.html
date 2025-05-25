@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- LightGallery CSS -->
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@2.7.1/css/lightgallery-bundle.min.css"> -->
+    <!-- UMD CSS bundle -->
+    <!-- <link href="lightGallary2.8.3.css" rel="stylesheet" /> -->
+    <link href="https://cdn.jsdelivr.net/npm/lightgallery@2.8.3/css/lightgallery-bundle.min.css" rel="stylesheet" />
+
+
+    <!-- UMD core -->
+    <script src="lightGallary.js"></script>
+
+    <!-- UMD plugins (all 2.8.3) -->
+    <script src="thumbnail.js"></script>
+    <script src="zoom.js"></script>
+    <script src="fullScreen.js"></script>
+    <script src="share.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/lightgallery@2.8.3/plugins/download/lg-download.umd.min.js"></script> -->
+    <script src="rotate.js"></script>
+    <script src="autoplay.js"></script>
+</head>
+
+<body>
+    <div id="lightgallery">
+        <a href="https://images.all-free-download.com/images/thumb/goa_small_bird_202958.webp"
+            data-sub-html="<h4>Bird in Goa</h4><p>A small bird captured in Goa.</p>">
+            <img src="https://images.all-free-download.com/images/thumb/goa_small_bird_202958.webp"
+                style="width: 150px;" />
+        </a>
+
+        <a href="https://images.all-free-download.com/images/thumb/wild_nature_picture_cute_small_otter_6942491.webp"
+            data-sub-html="<h4>Wild Otter</h4><p>A cute small otter in the wild.</p>">
+            <img src="https://images.all-free-download.com/images/thumb/wild_nature_picture_cute_small_otter_6942491.webp"
+                style="width: 150px;" />
+        </a>
+
+        <a href="img3.jpg" data-sub-html="<h4>Sample Image</h4><p>This is image 3 description.</p>">
+            <img src="img3.jpg" style="width: 150px;" />
+        </a>
+    </div>
+
+
+</body>
+
+
+<script>
+    // grab the plugin globals off window
+    const {
+        lgThumbnail,
+        lgZoom,
+        lgFullscreen,
+        lgShare,
+        lgRotate,
+        lgAutoplay
+    } = window;
+
+    lightGallery(document.getElementById("lightgallery"), {
+        speed: 500,
+        // register all the plugins you want:
+        plugins: [
+            lgThumbnail,
+            lgZoom,
+            lgFullscreen,
+            lgShare,
+            lgRotate,
+            lgAutoplay
+        ],
+        // thumbnail & zoom etc.
+        thumbnail: true,
+        download: true,
+        rotate: true,
+        zoom: true,
+        fullscreen: true,
+        share: true,
+
+        // ─── AUTOPLAY OPTIONS ───────────────────────
+        autoplay: true,           // turn on autoplay
+        pause: 5000,              // time between slides (ms)
+        progressBar: true,        // show progress bar
+        forceAutoplay: false,     // stop autoplay on first user action?
+        autoplayControls: true,   // show play/pause button
+        appendAutoplayControlsTo: '.lg-toolbar'
+        // ────────────────────────────────────────────
+    });
+</script>
+
+
+</html>
